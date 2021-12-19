@@ -1,0 +1,15 @@
+void shearSort(int* gridDimension, int rank, double* arrIdRectanleArea, int* coordinateOfProces, MPI_Comm newComm);
+void sortColumns(int* gridDimension, int rank, double* arrIdRectanleArea, int* coordinateOfProces, MPI_Comm newComm, int number_of_iterations);
+void sortRows(int* gridDimension, int rank, double* arrIdRectanleArea, int* coordinateOfProces, MPI_Comm newComm, int number_of_iterations);
+void switchAreasBetweenProcess(double* arrIdRectanleArea, int neighbour, MPI_Comm newComm, int rank);
+void procesNeedToCheckSwitch(int* flagToSwitch, int neighbour, MPI_Comm newComm, int rank, int* coordinateOfProces, double rectangleAreaNeighbor, double* arrIdRectanleArea);
+void MaxToMinSort(int* flagToSwitch, int neighbour, MPI_Comm newComm, int rank, double rectangleAreaNeighbor, double* arrIdRectanleArea);
+void MinToMaxSort(int* flagToSwitch, int neighbour, MPI_Comm newComm, int rank, double rectangleAreaNeighbor, double* arrIdRectanleArea);
+void switchAreasRowsMaxToMin(int* flagToSwitch, int neighbour, MPI_Comm newComm, int rank);
+void switchAreasRowsMinToMax(int* flagToSwitch, int neighbour, MPI_Comm newComm, int rank);
+void switchAreasRowsMaxToMinByID(int neighbour, MPI_Comm newComm, double* arrIdRectanleArea, int rank);
+void switchAreasRowsMinToMaxByID(int neighbour, MPI_Comm newComm, double* arrIdRectanleArea, int rank);
+double calcRectangleArea(double side1, double side2);
+double *readFromFile(const char *fileName, int* numberOfRectangles);
+void buildNewCommAndSortIt(int* gridDimension, int rank, double* arrIdRectanleArea);
+void printSnakeIdRectangle(double* arr, int sizeSide, FILE* file);
